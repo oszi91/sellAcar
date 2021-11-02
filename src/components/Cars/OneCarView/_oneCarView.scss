@@ -1,0 +1,244 @@
+.oneCarViewContainer {
+	margin-top: 60px;
+
+	// &__bar {
+	// 	width: 100%;
+	// 	height: 50px;
+	// }
+	// background-color: lighten($color: $color4, $amount: 10%);
+}
+
+.oneCarView {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px;
+
+	@include phone {
+		flex-direction: column;
+		width: 100%;
+		padding: 5px;
+		margin-top: 15px;
+	}
+
+	&__photos {
+		width: 60%;
+
+		img {
+			border-radius: 15px;
+		}
+
+		@include phone {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		&__img {
+			// margin: 0 auto;
+			border-radius: 10px;
+		}
+	}
+
+	&__info {
+		width: 40%;
+		box-shadow: 2px 5px 32px 15px lighten($color: $color4, $amount: 5%);
+		border-radius: 15px;
+		margin-left: 25px;
+		overflow: hidden;
+
+		@include phone {
+			width: 100%;
+			margin-left: 0;
+			margin-top: 30px;
+		}
+
+		&__header {
+			padding: 15px 0;
+			text-align: center;
+			font-weight: 700;
+			font-size: 2.5rem;
+			background-color: $color1;
+			color: $color2;
+			box-shadow: 2px 10px 20px 3px lighten($color: $color4, $amount: 5%);
+
+			&--price {
+				color: $color7;
+				background: linear-gradient(
+					lighten($color: $color4, $amount: 8%),
+					$color4
+				);
+				font-size: 2.3rem;
+
+				@include phone {
+					font-size: 1.4rem;
+				}
+			}
+
+			@include phone {
+				font-size: 1.6rem;
+				margin: 0;
+				padding: 10px 0;
+			}
+		}
+
+		.oneCarEquipment {
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+
+			&__item {
+				padding: 15px;
+				width: 50%;
+				background-color: $color1;
+				color: $color1;
+				border: 1px solid lighten($color4, 10%);
+				font-size: 1.1rem;
+				color: black;
+
+				@include phone {
+					font-size: 0.8rem;
+				}
+
+				&__description {
+					width: 100%;
+					text-align: center;
+					font-weight: 700;
+					cursor: pointer;
+					border-radius: 0 0 15px 15px;
+					border-bottom: none;
+				}
+
+				&__addDescription {
+					display: none;
+					width: 100%;
+					padding: 10px;
+					line-height: 1.3;
+					color: $color2;
+					background-color: lighten($color: $color4, $amount: 70%);
+					border: 1px solid white;
+
+					&--isHide {
+						display: block;
+					}
+				}
+
+				&--bold {
+					margin-left: 3px;
+					font-weight: 700;
+				}
+
+				&--white {
+					// border: 1px solid $color4;
+					background: linear-gradient(
+						lighten($color: $color4, $amount: 10%),
+						$color4
+					);
+				}
+			}
+		}
+
+		&__contact {
+			text-align: center;
+
+			&__item {
+				margin: 5px 0;
+			}
+		}
+	}
+}
+
+.contactContainer {
+	margin: 25px 0;
+	box-shadow: 2px 10px 20px 3px lighten($color: $color4, $amount: 5%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 40px;
+
+	@include phone {
+		padding: 40px;
+	}
+
+	&__header {
+		margin-bottom: 70px;
+		font-size: 4rem;
+		font-weight: 700;
+
+		@include phone {
+			font-size: 2.5rem;
+			margin-bottom: 35px;
+		}
+	}
+
+	.contactInfoListContainer {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		font-size: 1.3rem;
+
+		@include phone {
+			flex-direction: column;
+			font-size: 1.1rem;
+		}
+
+		.contactInfo {
+			&__item {
+				margin-bottom: 15px;
+				color: black;
+				display: flex;
+				align-items: center;
+
+				&__line {
+					width: 100%;
+					background-color: lighten($color4, 10%);
+					height: 1px;
+					border: 0;
+					margin-bottom: 15px;
+				}
+
+				@include phone {
+					margin-bottom: 10px;
+				}
+
+				&__btn {
+					background-color: $color2;
+					color: $color1;
+					border-radius: 5px;
+					padding: 5px 15px;
+					margin-left: 10px;
+					font-size: 1rem;
+				}
+
+				&--icon {
+					.fas {
+						font-size: 1.3rem;
+						color: white;
+						display: inline-block;
+						border-radius: 50%;
+						background-color: black;
+						padding: 0.5em 0.6em;
+						margin-right: 5px;
+
+						@include phone {
+							font-size: 0.9rem;
+						}
+					}
+				}
+
+				&--bigger {
+					font-size: 2.7rem;
+					@include phone {
+						font-size: 2rem;
+						margin-top: 15px;
+					}
+				}
+
+				&__label {
+					font-weight: 700;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{
+  "name": "sellAcar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production --env production",
+    "start": "webpack-cli serve --mode development --host 0.0.0.0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://oszi91.github.io/sellAcar",
+  "dependencies": {
+    "firebase": "^8.4.1",
+    "react": "^17.0.1",
+    "react-beautiful-dnd": "^13.1.0",
+    "react-dom": "^17.0.1",
+    "react-image-gallery": "^1.0.9",
+    "react-router-dom": "^5.2.0",
+    "source-map-loader": "^2.0.1",
+    "uuid": "^8.3.2",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/runtime": "^7.13.10",
+    "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^3.6.0",
+    "file-loader": "^6.2.0",
+    "gh-pages": "^3.1.0",
+    "html-webpack-plugin": "^5.3.1",
+    "json-loader": "^0.5.7",
+    "node-sass": "^5.0.0",
+    "postcss-loader": "^2.1.6",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.25.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

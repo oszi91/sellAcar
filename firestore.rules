@@ -1,0 +1,104 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+      match /usersBlackList/{itemId}{
+    allow read: if true;
+    allow create: if isAdmin();
+    allow update: if isAdmin();
+    allow delete: if isAdmin();
+
+     function isAdmin() {
+         return request.auth.uid == cars.ownerId || get(/databases/$(database)/documents/users/$(request.auth.uid)).admin == true || get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+      } 
+  }
+
+  match /users/{itemId}{
+    allow read: if true;
+    allow create: if true;
+    allow update: if true;
+    allow delete: if true;
+
+    function isAdmin(){
+         return request.auth.uid.admin == true || request.auth.uid.data.admin == true;
+    }
+  }
+  match /cars/{itemId}{
+
+      allow read: if true;
+
+      allow create: if isValidCars(request.resource.data) &&
+        isOwnerOrAdmin(request.resource.data) &&
+        isSignedIn()
+
+      allow update: if isValidCars(request.resource.data) &&
+        isOwnerOrAdmin(request.resource.data) &&
+        isOwnerOrAdmin(resource.data) &&
+        isSignedIn();
+
+      allow delete: if isOwnerOrAdmin(resource.data) &&
+        isSignedIn();
+
+      function isSignedIn() {
+        return request.auth != null;
+      }
+  
+      function isOwnerOrAdmin(cars) {
+        return request.auth.uid == cars.ownerId || get(/databases/$(database)/documents/users/$(request.auth.uid)).admin == true || get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+      } 
+
+      function isValidCars(cars) {
+        return (
+       
+          cars.brand is string &&
+          cars.brand != '' &&
+      
+          cars.model is string &&
+          cars.model != '' &&
+        
+          cars.year is number &&
+          cars.year != '' &&
+       
+          cars.price is number &&
+          cars.price != '' &&
+         
+          cars.kilometers is number &&
+          cars.kilometers != '' &&
+          
+          cars.engine is string &&
+        
+          cars.capacity is string &&
+          
+          cars.power is string && 
+
+          cars.vin is string && 
+          cars.vin != '' &&
+         
+          cars.fuel is string &&
+          cars.fuel != '' &&
+        
+          cars.ownerId is string &&
+          cars.ownerId != '' &&
+     
+          cars.updateTime is timestamp &&
+          cars.updateTime != '' &&
+          
+          cars.createTime is timestamp &&
+          cars.createTime != '' &&
+          
+          cars.description is string &&
+
+          cars.isActive is bool
+        );
+      }
+
+      function spamProtection() {
+        return ( 
+          request.time > resource.data.updateTime +
+          duration.value(2, 's')
+        ); 
+      }
+
+    }
+  }
+}

@@ -1,0 +1,223 @@
+.header-black {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 60px;
+	background-color: $color2;
+	z-index: -1;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	color: $color1;
+
+	background: rgba(0, 0, 0, 0.7);
+	box-shadow: $box-shadow;
+	z-index: 9999;
+	border-bottom: 2px solid $color7;
+
+	@include phone {
+		background-color: $color2;
+	}
+}
+
+.headerContainer {
+	display: flex;
+	align-items: center;
+	height: 60px;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+
+	&__logo {
+		display: flex;
+		align-items: center;
+
+		&__txt {
+			font-size: 2.5rem;
+			font-family: $font-logo;
+
+			&--color {
+				color: $color3;
+			}
+		}
+	}
+}
+
+.navUser {
+	font-weight: 600;
+	font-size: 1.1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	@include phone {
+		font-size: 1.5rem;
+		display: none;
+		position: fixed;
+		top: 60px;
+		left: 0;
+		flex-direction: column;
+		width: 100vw;
+		height: 100vh;
+		background-color: $color2;
+		justify-content: flex-start;
+
+		&--isOpen {
+			display: flex;
+		}
+
+		&--unlogged {
+			display: flex;
+			position: static;
+			flex-direction: row;
+			width: auto;
+			height: auto;
+			font-size: 1.1rem;
+		}
+	}
+
+	&__item {
+		position: relative;
+		line-height: 60px;
+		padding: 0 20px;
+
+		@include phone {
+			position: static;
+
+			&:nth-child(1) {
+				display: none;
+			}
+
+			&--admin {
+				&:nth-child(1) {
+					display: block;
+				}
+			}
+		}
+
+		&--unlogged {
+			padding: 0 3px;
+
+			&:nth-child(1) {
+				display: block;
+			}
+		}
+
+		&__link {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+
+			&:hover,
+			&--active {
+				border-top: 2px solid transparent;
+				border-bottom: 2px solid $color3;
+				color: darken($color: $color1, $amount: 10%);
+			}
+
+			@include phone {
+				border-top: 2px solid transparent;
+				border-bottom: 2px solid $color3;
+				color: darken($color: $color1, $amount: 10%);
+
+				&--unlogged {
+					border: 0;
+				}
+			}
+
+			i {
+				margin-left: 8px;
+				font-size: 1.6rem;
+			}
+
+			.fas.fa-star {
+				font-size: 1.2rem;
+			}
+		}
+
+		&--hamburger {
+			display: none;
+		}
+	}
+
+	&__submenu {
+		display: none;
+		position: absolute;
+		flex-direction: column;
+		background-color: $color7;
+		color: $color1;
+		min-width: 200px;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include phone {
+			display: flex;
+		}
+
+		&__item {
+			line-height: 45px;
+			width: 100%;
+			text-align: center;
+
+			&:first-child {
+				display: none;
+
+				@include phone {
+					display: block;
+				}
+			}
+
+			@include phone {
+				line-height: 60px;
+			}
+
+			&__link {
+				display: flex;
+				width: 100%;
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+
+				i {
+					margin-left: 8px;
+					font-size: 1.1rem;
+				}
+			}
+
+			&:hover {
+				background-color: $color2;
+			}
+		}
+	}
+}
+
+.mobileMenuContainer {
+	display: none;
+	@include phone {
+		display: flex;
+		font-size: 2rem;
+
+		&__item {
+			&:last-child {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+.isSubmenuActive {
+	display: flex;
+}

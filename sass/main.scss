@@ -1,0 +1,24 @@
+@import 'settings/reset';
+@import 'settings/colors';
+@import 'settings/mixins';
+@import 'settings/fonts';
+@import 'settings/base';
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import './../src/components/Loading/loading';
+@import './../src/components/AdminAccount/AllUsersList/allUsersList';
+
+@import './../src/components/Header/header';
+
+@import './../src/components/UserAccount/userAccount';
+
+@import './../src/components/StartPage/startPage';
+@import './../src/components/StartPage/subcomponents/Search/search';
+@import './../src/components/Cars/CarList/carList';
+
+@import './../src/components/Cars/OneCarView/oneCarView';
+
+@import './../src/components/Auth/auth';
+
+@import './../src/components/CarForm/carForm';
+
+@import './../src/components/Footer/footer';
