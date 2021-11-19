@@ -10,8 +10,7 @@
 		@include phone {
 			margin-top: 15px;
 		}
-		// background-color: lighten($color: $color4, $amount: 15%);
-		// background-color: $color2;
+
 		background: rgba(0, 0, 0, 0.7);
 		display: flex;
 		justify-content: space-evenly;
@@ -70,6 +69,10 @@
 
 		@include phone {
 			width: 100%;
+		}
+
+		@include tablet{
+			width: 50%;
 		}
 
 		&__fav {

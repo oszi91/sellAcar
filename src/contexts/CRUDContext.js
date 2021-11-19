@@ -67,7 +67,7 @@ const CRUDProvider = ({ children }) => {
 			try {
 				const car = carsRef.doc(id);
 				const updateorAddData = await car.set(dataToAdd);
-				const reset = await dispatch({ type: 'RESETFORM' });
+				const reset = dispatch({ type: 'RESETFORM' });
 				const redirect = history.push('/my-cars/active');
 			} catch (err) {
 				dispatch({ type: 'ERROR', payload: { error: err.message } });

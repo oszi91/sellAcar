@@ -62,7 +62,7 @@ const AdminNav = ({
 					</li>
 					<li className="navUser__submenu__item">
 						<Link className="navUser__submenu__item__link" to="/all-users-list">
-							Users List
+							User List
 						</Link>
 					</li>
 					<li className="navUser__submenu__item" onClick={handleLogout}>

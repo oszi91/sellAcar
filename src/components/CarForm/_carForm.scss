@@ -41,6 +41,10 @@
 		box-shadow: 2px 10px 20px 3px lighten($color: $color4, $amount: 5%);
 		margin-bottom: 30px;
 
+		@include tablet{
+			width: 95%;
+		}
+
 		&__uploadTxt{
 			margin-top: 25px;
 			font-size: 1.2rem;
@@ -86,6 +90,10 @@
 			flex-direction: column;
 			justify-content: center;
 			align-self: center;
+		}
+
+		@include tablet{
+			flex-wrap: wrap;
 		}
 	}
 
@@ -245,6 +253,10 @@
 		@include phone {
 			width: 100%;
 		}
+
+		@include tablet{
+			width: 100%;
+		}
 	}
 }
 
@@ -272,6 +284,10 @@
 				max-width: none;
 				max-height: none;
 			}
+
+			@include tablet{
+				max-width: 110px;
+			}
 		}
 	}
 
@@ -288,6 +304,10 @@
 			text-align: center;
 			font-size: 1.2rem;
 			margin-top: 5px;
+		}
+
+		@include tablet{
+			font-size: 1.3rem;
 		}
 
 		span {
@@ -316,6 +336,7 @@
 		@include phone {
 			margin-top: 10px;
 		}
+
 	}
 
 	&__btns {
@@ -337,6 +358,11 @@
 			font-size: 1.2rem;
 			border-radius: 10px 0 0 10px;
 
+			@include tablet{
+				width: 80px;
+				font-size: 0.8rem;
+			}
+
 			&--accept,
 			&--end,
 			&--active {
@@ -347,10 +373,16 @@
 				@include phone {
 					margin-top: 10px;
 				}
+
+				@include tablet{
+					width: 50px;
+				}
 			}
 
 			&--active {
 				width: 125px;
+
+				
 			}
 
 			&--end {

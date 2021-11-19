@@ -18,7 +18,7 @@
 	z-index: 9999;
 	border-bottom: 2px solid $color7;
 
-	@include phone {
+	@include phoneAndTablet {
 		background-color: $color2;
 	}
 }
@@ -58,7 +58,7 @@
 	align-items: center;
 	cursor: pointer;
 
-	@include phone {
+	@include phoneAndTablet {
 		font-size: 1.5rem;
 		display: none;
 		position: fixed;
@@ -89,7 +89,7 @@
 		line-height: 60px;
 		padding: 0 20px;
 
-		@include phone {
+		@include phoneAndTablet {
 			position: static;
 
 			&:nth-child(1) {
@@ -125,7 +125,7 @@
 				color: darken($color: $color1, $amount: 10%);
 			}
 
-			@include phone {
+			@include phoneAndTablet {
 				border-top: 2px solid transparent;
 				border-bottom: 2px solid $color3;
 				color: darken($color: $color1, $amount: 10%);
@@ -163,7 +163,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 
-		@include phone {
+		@include phoneAndTablet {
 			display: flex;
 		}
 
@@ -175,12 +175,12 @@
 			&:first-child {
 				display: none;
 
-				@include phone {
+				@include phoneAndTablet {
 					display: block;
 				}
 			}
 
-			@include phone {
+			@include phoneAndTablet {
 				line-height: 60px;
 			}
 
@@ -206,7 +206,7 @@
 
 .mobileMenuContainer {
 	display: none;
-	@include phone {
+	@include phoneAndTablet {
 		display: flex;
 		font-size: 2rem;
 

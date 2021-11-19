@@ -24,6 +24,10 @@
             width: 100%;
         }
 
+        @include tablet{
+            width: 95%;
+        }
+
         &__item{
             display: flex;
             justify-content: center;
